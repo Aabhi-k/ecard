@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Register.css';
+import { registerUser } from '../service/apis';
 
 const Register = () => {
     const [username, setUsername] = useState('');
@@ -39,6 +40,16 @@ const Register = () => {
         console.log('Username:', username);
         console.log('Email:', email);
         console.log('Password:', password);
+
+        registerUser(username, email, password)
+            .then((data) => {
+                console.log(data);
+                alert('Registered successfully');
+            })
+            .catch((e) => {
+                console.error(e);
+                alert('Failed to register');
+            })
     }
 
 

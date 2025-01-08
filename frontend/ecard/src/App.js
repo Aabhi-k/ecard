@@ -1,5 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Routes } from 'react-router-dom';
+
+import PrivateRouter from './service/PrivateRouter.jsx';
+
 import Login from './login/login.jsx';
 import Register from './Register/Register.jsx';
 import Navbar from './Navbar/Navbar.jsx';
@@ -17,7 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/create" element={<Create />} />
+          <Route path="/create" element={<PrivateRouter element={<Create />} />} />
        </Routes>
       </Router>
 
