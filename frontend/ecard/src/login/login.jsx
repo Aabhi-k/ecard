@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './login.css';
+import { loginUser } from '../service/apis';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -26,6 +27,18 @@ const Login = () => {
         }
         console.log('Email:', email);
         console.log('Password', password);
+        try{
+            const data = loginUser(email, password);
+            if(data.token){
+                localStorage.setItem('token', data.token);
+            }
+            
+
+        }
+        catch(e){
+            console.error(e);
+            alert('Failed to login');
+        }
     }
 
     return (
