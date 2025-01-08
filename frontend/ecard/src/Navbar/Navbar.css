@@ -69,6 +69,15 @@
     transition: all 0.3s;
 
 }
-.menu a:hover, .nav-links a:hover{
+.menu-icon{
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+
+.menu a:hover, .nav-links a:hover, .menu-icon:hover{
     transform: scale(1.1);
+}
+.menu a:active, .nav-links a:active, .menu-icon:active{
+    transform: scale(0.9);
 }

@@ -4,4 +4,8 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    overflow: hidden;
+}
+.create h1{
+    margin-left: 200px;
 }
